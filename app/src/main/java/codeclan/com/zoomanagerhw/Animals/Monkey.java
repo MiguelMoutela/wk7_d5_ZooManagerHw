@@ -13,4 +13,5 @@ public class Monkey extends Animal {
     public Monkey(String name, float cashValue) {
         super(name, cashValue);
     }
+
 }
