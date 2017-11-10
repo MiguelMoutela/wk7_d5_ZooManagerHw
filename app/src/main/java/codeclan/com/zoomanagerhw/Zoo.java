@@ -26,13 +26,6 @@ public class Zoo<T> {
         return this.funds;
     }
 
-    public void addAnimal(T animal) {
-        this.enclosures.add(animal);
-    }
-
-    public void removeAnimal(T animal) {
-        this.enclosures.remove(animal);
-    }
 
     public void addFunds(float money) {
         this.funds += money;

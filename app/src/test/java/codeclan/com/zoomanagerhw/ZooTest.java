@@ -4,6 +4,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import codeclan.com.zoomanagerhw.Animals.Monkey;
+import codeclan.com.zoomanagerhw.Enclosures.Enclosure;
 
 import static org.junit.Assert.assertEquals;
 
@@ -15,26 +16,15 @@ public class ZooTest {
 
     Zoo centralZoo;
     Monkey monkey;
+    Enclosure monkeyCage;
 
     @Before
     public void before() {
         centralZoo = new Zoo();
         monkey = new Monkey("Bibi", 10);
+        monkeyCage = new Enclosure();
     }
     @Test public void zooHasNoAnimals() {
-        assertEquals(0, centralZoo.getNumberOfAnimals());
-    }
-
-    @Test public void zooCanAddAnimals() {
-        centralZoo.addAnimal(monkey);
-        centralZoo.addAnimal(monkey);
-        centralZoo.addAnimal(2);
-
-        assertEquals(3, centralZoo.getNumberOfAnimals());
-    }
-    @Test public void zooCanRemoveAnimals() {
-        centralZoo.addAnimal(monkey);
-        centralZoo.removeAnimal(monkey);
         assertEquals(0, centralZoo.getNumberOfAnimals());
     }
     @Test public void zooHasNoFunds() {
@@ -50,9 +40,9 @@ public class ZooTest {
         assertEquals(0, centralZoo.getFunds(), 0.01);
     }
     @Test public void zooCanSellAnimal() {
-        centralZoo.addAnimal(monkey);
+        monkeyCage.addAnimal(monkey);
         centralZoo.sellAnimal(monkey);
         assertEquals(10, centralZoo.getFunds(),0.01);
+        assertEquals(0, centralZoo.getNumberOfAnimals());
     }
-//    @Test public void
 }
