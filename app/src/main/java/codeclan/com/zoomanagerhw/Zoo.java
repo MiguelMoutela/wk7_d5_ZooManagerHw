@@ -35,8 +35,35 @@ public class Zoo<T> {
         this.funds -= money;
     }
 
+//    sellAnimal should probably have a
+    //an else{ return string}
+
+//Why can I only call contain() on enclosures but not enclosure?!?!?
+//Why can I not access my methods of the enclosure class??!??!?
+    public void sellAnimalTakingIntoAccountDifferentEnclosures(Animal animal) {
+
+        for (T enclosure : enclosures) {
+            if (enclosure.contains(animal)) {
+                enclosure.removeAnimal(animal);
+                this.funds += animal.getCashValue();
+            }
+        }
+    }
+//Was working but not anymore
+//Should have never have worked in the first place?
     public void sellAnimal(Animal animal) {
         enclosures.remove(animal);
         this.funds += animal.getCashValue();
+    }
+// Not running properly
+// does not like the second loop
+    public float getTotalAnimalCashValue() {
+        float totalAnimalCashValue = 0;
+        for (T enclosure : enclosures) {
+            for (Animal animal : enclosure) {
+                totalAnimalCashValue += animal.getCashValue();
+            }
+        }
+        return totalAnimalCashValue;
     }
 }

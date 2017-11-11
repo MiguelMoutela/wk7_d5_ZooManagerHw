@@ -24,30 +24,37 @@ public class EnclosureTest {
         monkey = new Monkey("Bibi", 10);
         monkey = new Monkey("BibiToo", 10);
     }
+
     @Test
     public void cageHasNoAnimal() {
         assertEquals(0, monkeyCage.getSize());
     }
+
     @Test
     public void canAddAnimal() {
         monkeyCage.addAnimal(monkey);
         assertEquals(1, monkeyCage.getSize());
     }
+
     @Test
     public void canRemoveAnimal() {
         monkeyCage.addAnimal(monkey);
         monkeyCage.removeAnimal(monkey);
         assertEquals(0, monkeyCage.getSize());
     }
+
     @Test
     public void canGetNumberOfAnimalInCage() {
         monkeyCage.addAnimal(monkey);
         monkeyCage.addAnimal(monkey);
         assertEquals(2, monkeyCage.getSize());
     }
+
     @Test
     public void canGetTotalAnimalCageValue() {
         monkeyCage.addAnimal(monkey);
         monkeyCage.addAnimal(monkey);
-        assertEquals(20, monkeyCage.getTotalCageValue(),0.01);}
+        assertEquals(20, monkeyCage.getTotalCageValue(), 0.01);
+    }
+
 }
