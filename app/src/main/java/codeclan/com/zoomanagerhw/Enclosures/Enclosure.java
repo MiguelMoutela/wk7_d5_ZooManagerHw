@@ -13,7 +13,7 @@ public class Enclosure<T extends Animal> {
     private ArrayList<T>enclosure;
 
     public Enclosure() {
-            enclosure = new ArrayList<>();
+            this.enclosure = new ArrayList();
         }
 
     public int getSize() {
@@ -32,5 +32,9 @@ public class Enclosure<T extends Animal> {
             totalCageValue += animal.getCashValue();
         }
         return totalCageValue;
+    }
+
+    public ArrayList getAnimals() {
+        return enclosure;
     }
 }
