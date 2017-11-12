@@ -84,8 +84,6 @@ public class Zoo {
     public void setTicketPrice(float ticketPrice) {
         this.ticketPrice = ticketPrice;
     }
-
-
 //     Not running properly
 //     does not like enclosure in the second loop
 
