@@ -11,7 +11,7 @@ import codeclan.com.zoomanagerhw.Enclosures.Enclosure;
  */
 
 public class Zoo {
-    private ArrayList<Enclosure>enclosures;
+    private ArrayList<Enclosure> enclosures;
     private float funds;
     private float ticketPrice;
     private Visitor[] visitors;
@@ -23,7 +23,7 @@ public class Zoo {
     //when full
     //last index is 49
 
-    public Zoo(){
+    public Zoo() {
         this.enclosures = new ArrayList<>();
         //Is this composition?
         this.visitors = new Visitor[50];
@@ -61,35 +61,39 @@ public class Zoo {
 
         for (Enclosure animalsEnclosure : enclosures) {
             if (animalsEnclosure.confirmAnimalType(animal) == true) {
-                    animalsEnclosure.removeAnimal(animal);
-                    this.funds += animal.getCashValue();
-                    // need to return here otherwise
-                    // I will sell all the monkeys
-            } break;
-                // what a good opportunity for a catch all
-                // if I cannot find the animal type
+                animalsEnclosure.removeAnimal(animal);
+                this.funds += animal.getCashValue();
+                // need to return here otherwise
+                // I will sell all the monkeys
+            }
+            break;
+            // what a good opportunity for a catch all
+            // if I cannot find the animal type
         }
         return "Zoo does not have that animal";
     }
+
+    public float getTicketPrice() {
+        return this.ticketPrice;
+    }
+
+
+    // Not running properly
+    // does not like enclosure in the second loop
+    //
+    //    public float getTotalAnimalCashValue() {
+    //        float totalAnimalCashValue = 0;
+    //        for (T enclosure : enclosures) {
+    //            ArrayList animalArray = Enclosure.getAnimals();
+    //            for (Animal animal : animalArray) {
+    //                totalAnimalCashValue += animal.getCashValue();
+    //            }
+    //        }
+    //        return totalAnimalCashValue;
+    //    }
+    //--------------------------------------------------------
+    //    public void addVisitor(Visitor visitor){}
 }
-
-
-  // Not running properly
-  // does not like enclosure in the second loop
-  //
-  //    public float getTotalAnimalCashValue() {
-  //        float totalAnimalCashValue = 0;
-  //        for (T enclosure : enclosures) {
-  //            ArrayList animalArray = Enclosure.getAnimals();
-  //            for (Animal animal : animalArray) {
-  //                totalAnimalCashValue += animal.getCashValue();
-  //            }
-  //        }
-  //        return totalAnimalCashValue;
-  //    }
-  //--------------------------------------------------------
-  //    public void addVisitor(Visitor visitor){}
-
 
     //this method needs to throw and exception
     // called FullArrayException
