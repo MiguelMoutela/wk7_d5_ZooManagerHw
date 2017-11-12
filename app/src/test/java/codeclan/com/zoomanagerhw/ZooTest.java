@@ -34,12 +34,10 @@ public class ZooTest {
         elephant = new Elephant("Alastair", 20);
         visitor = new Visitor("Xavier", 100);
     }
-
     @Test
     public void zooHasNoEnclosures() {
         assertEquals(0, centralZoo.getNumberOfEnclosures());
     }
-
     @Test
     public void zooHasNoFunds() {
         assertEquals(0, centralZoo.getFunds(), 0.01);
@@ -60,7 +58,6 @@ public class ZooTest {
     public void zooCanGetTicketPrice() {
         centralZoo.getTicketPrice();
     }
-
     // goodbye encapsulation? Please ask an instructor
     // I am simply handing my array to another class
     // AssertNotNull passing
@@ -85,7 +82,6 @@ public class ZooTest {
         centralZoo.sellAnimalTakingIntoAccountDifferentEnclosures(monkey);
         assertEquals(10, centralZoo.getFunds(), 0.01);
     }
-
     @Test
     public void zooCanGetTotalValueOfAllEnclosures() {
         monkeyCage.addAnimal(monkey);
