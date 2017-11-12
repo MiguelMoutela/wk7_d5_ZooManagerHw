@@ -73,13 +73,13 @@ public class ZooTest {
         centralZoo.addEnclosure(monkeyCage.getAnimals());
         assertEquals(1, centralZoo.getNumberOfEnclosures());
     }
-//    @Test
-//    public void zooCanSellAnimalTakingIntoAccountDifferentEnclosures() {
-//        monkeyCage.addAnimal(monkey);
-//        centralZoo.sellAnimalTakingIntoAccountDifferentEnclosures(monkey);
-//        assertEquals(10, centralZoo.getFunds(), 0.01);
-//        assertEquals(0, centralZoo.getNumberOfAnimals());
-//    }
+    @Test
+    public void zooCanSellAnimalTakingIntoAccountDifferentEnclosures() {
+        monkeyCage.addAnimal(monkey);
+        centralZoo.addEnclosure(monkeyCage.getAnimals());
+        centralZoo.sellAnimalTakingIntoAccountDifferentEnclosures(monkey);
+        assertEquals(10, centralZoo.getFunds(), 0.01);
+    }
 //
 //    @Test
 //    public void zooCanSellAnimalWithoutTakingIntoAccountDifferentEnclosures() {
