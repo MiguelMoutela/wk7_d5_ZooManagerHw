@@ -37,4 +37,8 @@ public class Enclosure<T extends Animal> {
     public ArrayList getAnimals() {
         return enclosure;
     }
+
+    public boolean confirmAnimalType(Animal animal) {
+        return enclosure.contains(animal);
+    }
 }

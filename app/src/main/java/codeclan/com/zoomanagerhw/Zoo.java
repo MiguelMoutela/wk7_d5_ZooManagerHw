@@ -31,7 +31,7 @@ public class Zoo {
         this.ticketPrice = ticketPrice;
     }
 
-    public int getNumberOfAnimals() {
+    public int getNumberOfEnclosures() {
         return this.enclosures.size();
     }
 
@@ -47,26 +47,34 @@ public class Zoo {
         this.funds -= money;
     }
 
+    // New method here - addAll
+    // Is this overkill?
+
+    public void addEnclosure(ArrayList animalEnclosure) {
+        enclosures.addAll(animalEnclosure);
+    }
+
     //sellAnimal should probably have a
     //an else {return string}
 
 //Why can I only call contain() on enclosures but not enclosure?!?!?
 //Why can I not access my methods of the enclosure class??!??!?
-//    public void sellAnimalTakingIntoAccountDifferentEnclosures(Animal animal) {
-//
-//        for (T enclosure : enclosures) {
-//            if (enclosure.contains(animal)) {
-//                enclosure.removeAnimal(animal);
-//                this.funds += animal.getCashValue();
-//            }
-//        }
-//    }
-//Was working but not anymore
-//Should have never have worked in the first place?
-    public void sellAnimal(Animal animal) {
-        enclosures.remove(animal);
-        this.funds += animal.getCashValue();
+
+    public void sellAnimalTakingIntoAccountDifferentEnclosures(Animal animal) {
+
+        for (Enclosure animalsEnclosure : enclosures) {
+            if (animalsEnclosure.confirmAnimalType(animal)) {
+                if (animal.getCashValue() < this.getFunds()) {
+                    animalsEnclosure.removeAnimal(animal);
+                    this.funds += animal.getCashValue();
+                    // need to return here otherwise
+                    // I will sell all the monkeys
+                }
+                // what a good opportunity for a catch all
+            }
+        }
     }
+
 // Not running properly
 // does not like enclosure in the second loop
 //
@@ -80,8 +88,10 @@ public class Zoo {
 //        }
 //        return totalAnimalCashValue;
 //    }
+//--------------------------------------------------------
+//    public void addVisitor(Visitor visitor){}
 
-    public void addVisitor(Visitor visitor){}
+
     //this method needs to throw and exception
     // called FullArrayException
     // google what an array with a set size has
@@ -99,5 +109,12 @@ public class Zoo {
     //else (!thereIsRoom)
     // throw exception
     // {Sout "Zoo is at capacity, please wait in line"}
-    //
+    //-------------------------------------------------------------
+
+//Was working but not anymore
+//Should have never have worked in the first place?
+//    public void sellAnimal(Animal animal) {
+//        enclosures.remove(animal);
+//        this.funds += animal.getCashValue();
+//    }
 }

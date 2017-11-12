@@ -4,6 +4,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.experimental.theories.suppliers.TestedOn;
 
+import codeclan.com.zoomanagerhw.Animals.Animal;
 import codeclan.com.zoomanagerhw.Animals.Monkey;
 import codeclan.com.zoomanagerhw.Enclosures.Enclosure;
 
@@ -55,6 +56,11 @@ public class EnclosureTest {
         monkeyCage.addAnimal(monkey);
         monkeyCage.addAnimal(monkey);
         assertEquals(20, monkeyCage.getTotalCageValue(), 0.01);
+    }
+    @Test
+    public void enclosureCanConfirmItsAnimalTypeUsingBoolean() {
+        monkeyCage.addAnimal(monkey);
+        assertEquals(true, monkeyCage.confirmAnimalType(monkey));
     }
 
 }

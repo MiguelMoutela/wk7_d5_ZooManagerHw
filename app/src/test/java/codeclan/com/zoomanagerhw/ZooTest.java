@@ -34,8 +34,8 @@ public class ZooTest {
     }
 
     @Test
-    public void zooHasNoAnimals() {
-        assertEquals(0, centralZoo.getNumberOfAnimals());
+    public void zooHasNoEnclosures() {
+        assertEquals(0, centralZoo.getNumberOfEnclosures());
     }
 
     @Test
@@ -55,11 +55,23 @@ public class ZooTest {
         centralZoo.removeFunds(100);
         assertEquals(0, centralZoo.getFunds(), 0.01);
     }
+
     // goodbye encapsulation? Please ask an instructor
-    // same as the bear and the journal
+    // I am simply handing my array to another class
+    // AssertNotNull passing
+    // I have the other assertion just to show me that I am
+    // receiving an array of monkey objects.
     @Test
     public void zooCanGetAnimals() {
-         assertNotNull(monkeyCage.getAnimals());
+        monkeyCage.addAnimal((monkey));
+        assertEquals(monkey, monkeyCage.getAnimals());
+        assertNotNull(monkeyCage.getAnimals());
+    }
+    @Test
+    public void zooCanAddAnAnimalEnclosureToEnclosures() {
+        monkeyCage.addAnimal(monkey);
+        centralZoo.addEnclosure(monkeyCage.getAnimals());
+        assertEquals(1, centralZoo.getNumberOfEnclosures());
     }
 //    @Test
 //    public void zooCanSellAnimalTakingIntoAccountDifferentEnclosures() {
@@ -77,15 +89,15 @@ public class ZooTest {
 //        assertEquals(0, centralZoo.getNumberOfAnimals());
 //    }
 
-    @Test
-    public void zooCanGetTotalValueOfAllEnclosures() {
-        monkeyCage.addAnimal(monkey);
-        elephantPit.addAnimal(elephant);
-        // You need to add the monkeyCage and elephantPit to the
-        //zoo's enclosure array yourself.
-        // perhaps a method would be ideal
-        // canAddEnclosureToEnclosures()
-        assertEquals(2, centralZoo.getNumberOfAnimals());
-        assertEquals(30, centralZoo.getTotalAnimalCashValue());
-//    }
+//    @Test
+//    public void zooCanGetTotalValueOfAllEnclosures() {
+//        monkeyCage.addAnimal(monkey);
+//        elephantPit.addAnimal(elephant);
+//        // You need to add the monkeyCage and elephantPit to the
+//        //zoo's enclosure array yourself.
+//        // perhaps a method would be ideal
+//        // canAddEnclosureToEnclosures()
+//        assertEquals(2, centralZoo.getNumberOfAnimals());
+//        assertEquals(30, centralZoo.getTotalAnimalCashValue());
+////    }
 }
