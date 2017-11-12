@@ -11,7 +11,7 @@ import codeclan.com.zoomanagerhw.Enclosures.Enclosure;
  */
 
 public class Zoo {
-    private ArrayList<Enclosure> enclosures;
+    private ArrayList<Enclosure>enclosures;
     private float funds;
     private float ticketPrice;
     private Visitor[] visitors;
@@ -63,7 +63,7 @@ public class Zoo {
             if (animalsEnclosure.confirmAnimalType(animal) == true) {
                 animalsEnclosure.removeAnimal(animal);
                 this.funds += animal.getCashValue();
-                // need to return here otherwise
+                // need to break here otherwise
                 // I will sell all the monkeys
             }
             break;
