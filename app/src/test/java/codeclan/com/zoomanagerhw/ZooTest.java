@@ -28,7 +28,7 @@ public class ZooTest {
     public void before() {
         monkeyCage = new Enclosure<Monkey>();
         elephantPit = new Enclosure<Elephant>();
-//        centralZoo = new ArrayList<ArrayList<monkeyCage>()ArrayList<elephantPit>()>();
+        centralZoo = new Zoo();
         monkey = new Monkey("Bibi", 10);
         elephant = new Elephant("Alastair", 20);
     }
@@ -77,11 +77,15 @@ public class ZooTest {
 //        assertEquals(0, centralZoo.getNumberOfAnimals());
 //    }
 
-//    @Test
-//    public void zooCanGetTotalValueOfAllEnclosures() {
-//        monkeyCage.addAnimal(monkey);
-//        elephantPit.addAnimal(elephant);
-//        assertEquals(2, centralZoo.getNumberOfAnimals());
-//        assertEquals(30, centralZoo.getTotalAnimalCashValue());
+    @Test
+    public void zooCanGetTotalValueOfAllEnclosures() {
+        monkeyCage.addAnimal(monkey);
+        elephantPit.addAnimal(elephant);
+        // You need to add the monkeyCage and elephantPit to the
+        //zoo's enclosure array yourself.
+        // perhaps a method would be ideal
+        // canAddEnclosureToEnclosures()
+        assertEquals(2, centralZoo.getNumberOfAnimals());
+        assertEquals(30, centralZoo.getTotalAnimalCashValue());
 //    }
 }

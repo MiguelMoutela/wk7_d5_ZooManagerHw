@@ -10,8 +10,8 @@ import codeclan.com.zoomanagerhw.Enclosures.Enclosure;
  * Created by user on 10/11/2017.
  */
 
-public class Zoo<T> {
-    private ArrayList<T>enclosures;
+public class Zoo {
+    private ArrayList<Enclosure>enclosures;
     private float funds;
     private float ticketPrice;
     private Visitor[] visitors;
@@ -24,7 +24,7 @@ public class Zoo<T> {
     //last index is 49
 
     public Zoo(){
-        this.enclosures = new ArrayList<T>();
+        this.enclosures = new ArrayList<>();
         //Is this composition?
         this.visitors = new Visitor[50];
         this.funds = funds;
@@ -69,7 +69,7 @@ public class Zoo<T> {
     }
 // Not running properly
 // does not like enclosure in the second loop
-
+//
 //    public float getTotalAnimalCashValue() {
 //        float totalAnimalCashValue = 0;
 //        for (T enclosure : enclosures) {
