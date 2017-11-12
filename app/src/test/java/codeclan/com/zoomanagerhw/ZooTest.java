@@ -102,18 +102,16 @@ public class ZooTest {
         assertEquals(90, visitor.getFunds(),0.01);
     }
     @Test
-    public void zooCanCheckItsFull_notFull() {}
-    @Test
-    public void zooCanCheckItsFull_Full() {}
-    @Test
-    public void zooCanLetCVisitorIn() {
+    public void zooCanCheckItsFull_notFull() {
         centralZoo.addVisitor(visitor);
-        assertEquals()
+        assertEquals(false, centralZoo.checkItsFull());
     }
-
-
-
-    //
+    @Test
+    public void zooCanCheckItsFull_Full() {
+        centralZoo.addVisitor(visitor);
+        centralZoo.addVisitor(visitor);
+        assertEquals(true, centralZoo.checkItsFull());
+    }
 //    @Test
 //    public void zooCanSellAnimalWithoutTakingIntoAccountDifferentEnclosures() {
 //        monkeyCage.addAnimal(monkey);

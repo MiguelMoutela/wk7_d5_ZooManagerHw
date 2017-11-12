@@ -101,7 +101,6 @@ public class Zoo {
 //    }
     //--------------------------------------------------------
     public boolean checkItsFull() {
-
         boolean thereIsRoom = false;
         for (int index = 0; index < visitors.length; index++);
             if (visitors[index] == null) {
@@ -109,7 +108,6 @@ public class Zoo {
             }
         return thereIsRoom;
     }
-
     public String addVisitor(Visitor visitor) {
       if (checkItsFull() == false) {
           visitors.add(visitor);
