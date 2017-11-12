@@ -25,7 +25,6 @@ public class Enclosure<T extends Animal> {
     public void removeAnimal(T animal) {
         enclosure.remove(animal);
     }
-
     public float getTotalCageValue() {
         float totalCageValue = 0;
         for (T animal : enclosure) {
@@ -33,11 +32,9 @@ public class Enclosure<T extends Animal> {
         }
         return totalCageValue;
     }
-
     public ArrayList getAnimals() {
         return enclosure;
     }
-
     public boolean confirmAnimalType(Animal animal) {
         return enclosure.contains(animal);
     }

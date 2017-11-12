@@ -15,7 +15,6 @@ public class Visitor {
     public String getName() {
         return name;
     }
-
     public float getFunds() {
         return funds;
     }

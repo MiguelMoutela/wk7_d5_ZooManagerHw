@@ -12,11 +12,9 @@ public abstract class Animal {
         this.name = name;
         this.cashValue = cashValue;
     }
-
     public String getName() {
         return this.name;
     }
-
     public float getCashValue() {
         return this.cashValue;
     }
