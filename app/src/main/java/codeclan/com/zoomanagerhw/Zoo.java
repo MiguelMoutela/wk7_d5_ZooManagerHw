@@ -108,12 +108,16 @@ public class Zoo {
     }
     public String addVisitor(Visitor visitor) {
         if (checkItsFull() == false) {
+            chargeTicket(visitor);
+            // what a good opportunity
+            // to throw an exception
+            // if visitor does not have
+            // enough funds
             this.visitors.add(visitor);
          } else if (checkItsFull() == true) {}
         return "Please wait in line";
       // what a good opportunity to throw
-      // an exception
-      // if the zoo is full
+      // an exception if zoo is full
     }
 }
 
