@@ -92,15 +92,13 @@ public class ZooTest {
 //        assertEquals(0, centralZoo.getNumberOfAnimals());
 //    }
 
-//    @Test
-//    public void zooCanGetTotalValueOfAllEnclosures() {
-//        monkeyCage.addAnimal(monkey);
-//        elephantPit.addAnimal(elephant);
-//        // You need to add the monkeyCage and elephantPit to the
-//        //zoo's enclosure array yourself.
-//        // perhaps a method would be ideal
-//        // canAddEnclosureToEnclosures()
-//        assertEquals(2, centralZoo.getNumberOfAnimals());
+    @Test
+    public void zooCanGetTotalValueOfAllEnclosures() {
+        monkeyCage.addAnimal(monkey);
+        elephantPit.addAnimal(elephant);
+        centralZoo.addEnclosure(monkeyCage.getAnimals());
+        centralZoo.addEnclosure(elephantPit.getAnimals());
+        assertEquals(2, centralZoo.getNumberOfEnclosures());
 //        assertEquals(30, centralZoo.getTotalAnimalCashValue());
-////    }
+    }
 }
