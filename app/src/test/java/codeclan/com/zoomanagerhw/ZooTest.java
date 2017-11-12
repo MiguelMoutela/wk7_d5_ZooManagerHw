@@ -102,6 +102,10 @@ public class ZooTest {
         assertEquals(90, visitor.getFunds(),0.01);
     }
     @Test
+    public void zooCanCheckItsFull_notFull() {}
+    @Test
+    public void zooCanCheckItsFull_Full() {}
+    @Test
     public void zooCanLetCVisitorIn() {
         centralZoo.addVisitor(visitor);
         assertEquals()

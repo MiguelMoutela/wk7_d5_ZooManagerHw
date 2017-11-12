@@ -26,7 +26,7 @@ public class Zoo {
     public Zoo() {
         this.enclosures = new ArrayList<>();
         //Is this composition?
-        this.visitors = new Visitor[50];
+        this.visitors = new Visitor[2];
         this.funds = funds;
         this.ticketPrice = ticketPrice;
     }
@@ -65,7 +65,8 @@ public class Zoo {
                 this.funds += animal.getCashValue();
                 // need to return here otherwise
                 // I will sell all the monkeys
-            } break;
+            }
+            break;
             // what a good opportunity for a catch all
             // if I cannot find the animal type
         }
@@ -99,28 +100,23 @@ public class Zoo {
 //        return totalAnimalCashValue;
 //    }
     //--------------------------------------------------------
+    public boolean checkItsFull() {
 
+        boolean thereIsRoom = false;
+        for (int index = 0; index < visitors.length; index++);
+            if (visitors[index] == null) {
+                thereIsRoom = true;
+            }
+        return thereIsRoom;
+    }
+
+    public String addVisitor(Visitor visitor) {
+      if (checkItsFull() == false) {
+          visitors.add(visitor);
+      } else if (checkItsFull() == true) {}
+      return "Please wait in line";
+    }
 }
-
-
-//    public void addVisitor(Visitor visitor){}
-    //this method needs to throw and exception
-    // called FullArrayException
-    // google what an array with a set size has
-    // as a size "property and create an exception
-    //logic:
-
-    // boolean thereIsRoom = false;
-
-    // for (int index = 0 < visitors.length; i++) {
-    // if (visitors[index] == null) {
-    // thereIsRoom = true;
-    // visitors.AddVisitor(visitor);
-    // }
-
-    //else (!thereIsRoom)
-    // throw exception
-    // {Sout "Zoo is at capacity, please wait in line"}
     //-------------------------------------------------------------
 
 
