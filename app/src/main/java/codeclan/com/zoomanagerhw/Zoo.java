@@ -98,18 +98,17 @@ public class Zoo {
 //        }
 //        return totalAnimalCashValue;
 //    }
-    //--------------------------------------------------------
     public boolean checkItsFull() {
         boolean thereIsRoom = false;
-        for (int i = 0; i < visitors.length; i++)
-            if (visitors[i] == null) {
+        for (int index = 0; index < visitors.length; index++)
+            if (visitors[index] == null) {
                 thereIsRoom = true;
             }
         return thereIsRoom;
     }
     public String addVisitor(Visitor visitor) {
         if (checkItsFull() == false) {
-            visitors.add(visitor);
+            this.visitors.add(visitor);
          } else if (checkItsFull() == true) {}
         return "Please wait in line";
       // what a good opportunity to throw
@@ -117,7 +116,6 @@ public class Zoo {
       // if the zoo is full
     }
 }
-    //-------------------------------------------------------------
 
 
 
