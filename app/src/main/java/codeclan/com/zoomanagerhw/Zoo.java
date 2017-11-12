@@ -101,17 +101,17 @@ public class Zoo {
     //--------------------------------------------------------
     public boolean checkItsFull() {
         boolean thereIsRoom = false;
-        for (int index = 0; index < visitors.length; index++);
-            if (visitors[index] == null) {
+        for (int i = 0; i < visitors.length; i++)
+            if (visitors[i] == null) {
                 thereIsRoom = true;
             }
         return thereIsRoom;
     }
     public String addVisitor(Visitor visitor) {
-      if (checkItsFull() == false) {
-          visitors.add(visitor);
-      } else if (checkItsFull() == true) {}
-      return "Please wait in line";
+        if (checkItsFull() == false) {
+            visitors.add(visitor);
+         } else if (checkItsFull() == true) {}
+        return "Please wait in line";
       // what a good opportunity to throw
       // an exception
       // if the zoo is full
