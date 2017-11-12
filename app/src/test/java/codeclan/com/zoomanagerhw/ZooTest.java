@@ -23,6 +23,7 @@ public class ZooTest {
     Enclosure monkeyCage;
     Enclosure elephantPit;
     Elephant elephant;
+    Visitor visitor;
 
     @Before
     public void before() {
@@ -31,6 +32,7 @@ public class ZooTest {
         centralZoo = new Zoo();
         monkey = new Monkey("Bibi", 10);
         elephant = new Elephant("Alastair", 20);
+        visitor = new Visitor("Xavier", 100);
     }
 
     @Test
@@ -83,14 +85,6 @@ public class ZooTest {
         centralZoo.sellAnimalTakingIntoAccountDifferentEnclosures(monkey);
         assertEquals(10, centralZoo.getFunds(), 0.01);
     }
-//
-//    @Test
-//    public void zooCanSellAnimalWithoutTakingIntoAccountDifferentEnclosures() {
-//        monkeyCage.addAnimal(monkey);
-//        centralZoo.sellAnimal(monkey);
-//        assertEquals(10, centralZoo.getFunds(), 0.01);
-//        assertEquals(0, centralZoo.getNumberOfAnimals());
-//    }
 
     @Test
     public void zooCanGetTotalValueOfAllEnclosures() {
@@ -101,4 +95,26 @@ public class ZooTest {
         assertEquals(2, centralZoo.getNumberOfEnclosures());
 //        assertEquals(30, centralZoo.getTotalAnimalCashValue());
     }
+    @Test
+    public void zooCanChargeTicketToVisitor() {
+        centralZoo.setTicketPrice(10);
+        centralZoo.chargeTicket(visitor);
+        assertEquals(90, visitor.getFunds(),0.01);
+    }
+    @Test
+    public void zooCanLetCVisitorIn() {
+        centralZoo.addVisitor(visitor);
+        assertEquals()
+    }
+
+
+
+    //
+//    @Test
+//    public void zooCanSellAnimalWithoutTakingIntoAccountDifferentEnclosures() {
+//        monkeyCage.addAnimal(monkey);
+//        centralZoo.sellAnimal(monkey);
+//        assertEquals(10, centralZoo.getFunds(), 0.01);
+//        assertEquals(0, centralZoo.getNumberOfAnimals());
+//    }
 }

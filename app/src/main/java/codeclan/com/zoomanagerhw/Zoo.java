@@ -76,6 +76,14 @@ public class Zoo {
         return this.ticketPrice;
     }
 
+    public void chargeTicket(Visitor visitor) {
+        visitor.reduceFunds(this.ticketPrice);
+    }
+
+    public void setTicketPrice(float ticketPrice) {
+        this.ticketPrice = ticketPrice;
+    }
+
 
 //     Not running properly
 //     does not like enclosure in the second loop

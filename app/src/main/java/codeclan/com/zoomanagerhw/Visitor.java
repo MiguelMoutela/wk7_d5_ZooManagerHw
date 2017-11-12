@@ -12,7 +12,6 @@ public class Visitor {
         this.name = name;
         this.funds = funds;
     }
-
     public String getName() {
         return name;
     }
