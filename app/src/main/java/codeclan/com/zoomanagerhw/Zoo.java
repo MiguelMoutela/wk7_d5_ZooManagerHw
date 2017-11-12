@@ -107,14 +107,18 @@ public class Zoo {
         return thereIsRoom;
     }
     public String addVisitor(Visitor visitor) {
-        if (checkItsFull() == false) {
-            chargeTicket(visitor);
-            // what a good opportunity
-            // to throw an exception
-            // if visitor does not have
-            // enough funds
-            this.visitors.add(visitor);
-         } else if (checkItsFull() == true) {}
+
+        for (int index = 0; index < visitors.length; index++) {
+            if (visitors[index] == null) {
+                visitors[index] = visitor;
+                chargeTicket(visitor);
+                // what a good opportunity
+                // to throw an exception
+                // if visitor does not have
+                // enough funds
+                break;
+            }
+        }
         return "Please wait in line";
       // what a good opportunity to throw
       // an exception if zoo is full
