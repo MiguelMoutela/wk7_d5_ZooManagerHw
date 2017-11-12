@@ -67,7 +67,8 @@ public class Zoo {
                 // I will sell all the monkeys
             }
             break;
-            // what a good opportunity for a catch all
+            // what a good opportunity to throw
+            // an exception
             // if I cannot find the animal type
         }
         return "The Zoo does not have that animal in its enclosures";
@@ -111,6 +112,9 @@ public class Zoo {
           visitors.add(visitor);
       } else if (checkItsFull() == true) {}
       return "Please wait in line";
+      // what a good opportunity to throw
+      // an exception
+      // if the zoo is full
     }
 }
     //-------------------------------------------------------------
