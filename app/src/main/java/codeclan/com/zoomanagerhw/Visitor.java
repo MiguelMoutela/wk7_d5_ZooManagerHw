@@ -25,6 +25,6 @@ public class Visitor {
         }
     }
     public void increaseFunds(float amount) {
-        this.funds = amount;
+        this.funds += amount;
     }
 }

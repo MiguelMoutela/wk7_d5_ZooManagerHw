@@ -69,7 +69,6 @@ public class Zoo {
                 // I will sell all the monkeys
                 break;
             }
-
             // what a good opportunity to throw
             // an exception
             // if I cannot find the animal type
@@ -95,7 +94,6 @@ public class Zoo {
         for(Enclosure enclosure : this.enclosures) {
             total += enclosure.getSize();
         }
-
         return total;
     }
 
@@ -110,7 +108,7 @@ public class Zoo {
         return totalAnimalCashValue;
     }
 
-    public boolean checkItsFull() {
+    public boolean checkThereIsRoom() {
         boolean thereIsRoom = false;
         for (int index = 0; index < visitors.length; index++)
             if (visitors[index] == null) {

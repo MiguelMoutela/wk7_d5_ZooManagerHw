@@ -22,7 +22,7 @@ public class VisitorTest {
     }
     @Test
     public void canGetFunds() {
-        assertEquals(100, visitor1.getFunds());
+        assertEquals(100, visitor1.getFunds(),0.01);
     }
     @Test
     public void canReduceFunds() {
