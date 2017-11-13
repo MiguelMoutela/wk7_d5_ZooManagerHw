@@ -50,14 +50,16 @@ public class Zoo {
     // New method here - addAll
     // Is this overkill?
 
-    public void addEnclosure(ArrayList animalEnclosure) {
-        enclosures.addAll(animalEnclosure);
+    public void addEnclosure(Enclosure animalEnclosure) {
+        enclosures.add(animalEnclosure);
     }
 
     //sellAnimal should probably have a
     //an else {return string}
 
-    public String sellAnimalTakingIntoAccountDifferentEnclosures(Animal animal) {
+    //assertE
+
+    public void sellAnimalTakingIntoAccountDifferentEnclosures(Animal animal) {
 
         for (Enclosure animalsEnclosure : enclosures) {
             if (animalsEnclosure.confirmAnimalType(animal) == true) {
@@ -65,13 +67,13 @@ public class Zoo {
                 this.funds += animal.getCashValue();
                 // need to break here otherwise
                 // I will sell all the monkeys
+                break;
             }
-            break;
+
             // what a good opportunity to throw
             // an exception
             // if I cannot find the animal type
         }
-        return "The Zoo does not have that animal in its enclosures";
     }
 
     public float getTicketPrice() {
@@ -88,16 +90,26 @@ public class Zoo {
 //     Not running properly
 //     does not like enclosure in the second loop
 
-//    public float getTotalAnimalCashValue() {
-//        float totalAnimalCashValue = 0;
-//        for (Enclosure animalsEnclosure : enclosures) {
-//            ArrayList aTempAnimalArray = animalsEnclosure.getAnimals();
-//            for (Animal animal : aTempAnimalArray) {
-//                totalAnimalCashValue += animal.getCashValue();
-//            }
-//        }
-//        return totalAnimalCashValue;
-//    }
+    public int getNumberOfAnimals() {
+        int total = 0;
+        for(Enclosure enclosure : this.enclosures) {
+            total += enclosure.getSize();
+        }
+
+        return total;
+    }
+
+    public float getTotalAnimalCashValue() {
+        float totalAnimalCashValue = 0;
+        for (Enclosure animalsEnclosure : enclosures) {
+            ArrayList<Animal> aTempAnimalArray = animalsEnclosure.getAnimals();
+            for (Animal animal : aTempAnimalArray) {
+                totalAnimalCashValue += animal.getCashValue();
+            }
+        }
+        return totalAnimalCashValue;
+    }
+
     public boolean checkItsFull() {
         boolean thereIsRoom = false;
         for (int index = 0; index < visitors.length; index++)
@@ -106,6 +118,7 @@ public class Zoo {
             }
         return thereIsRoom;
     }
+
     public String addVisitor(Visitor visitor) {
 
         for (int index = 0; index < visitors.length; index++) {
@@ -116,7 +129,7 @@ public class Zoo {
                 // to throw an exception
                 // if visitor does not have
                 // enough funds
-                break;
+                return "Come on in";
             }
         }
         return "Please wait in line";

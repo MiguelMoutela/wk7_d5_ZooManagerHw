@@ -72,13 +72,13 @@ public class ZooTest {
     @Test
     public void zooCanAddAnAnimalEnclosureToEnclosures() {
         monkeyCage.addAnimal(monkey);
-        centralZoo.addEnclosure(monkeyCage.getAnimals());
+        centralZoo.addEnclosure(monkeyCage);
         assertEquals(1, centralZoo.getNumberOfEnclosures());
     }
     @Test
     public void zooCanSellAnimalTakingIntoAccountDifferentEnclosures() {
         monkeyCage.addAnimal(monkey);
-        centralZoo.addEnclosure(monkeyCage.getAnimals());
+        centralZoo.addEnclosure(monkeyCage);
         centralZoo.sellAnimalTakingIntoAccountDifferentEnclosures(monkey);
         assertEquals(10, centralZoo.getFunds(), 0.01);
     }
@@ -86,8 +86,8 @@ public class ZooTest {
     public void zooCanGetTotalValueOfAllEnclosures() {
         monkeyCage.addAnimal(monkey);
         elephantPit.addAnimal(elephant);
-        centralZoo.addEnclosure(monkeyCage.getAnimals());
-        centralZoo.addEnclosure(elephantPit.getAnimals());
+        centralZoo.addEnclosure(monkeyCage);
+        centralZoo.addEnclosure(elephantPit);
         assertEquals(2, centralZoo.getNumberOfEnclosures());
 //        assertEquals(30, centralZoo.getTotalAnimalCashValue());
     }
@@ -108,11 +108,19 @@ public class ZooTest {
         centralZoo.addVisitor(visitor);
         assertEquals(true, centralZoo.checkItsFull());
     }
-//    @Test
-//    public void zooCanSellAnimalWithoutTakingIntoAccountDifferentEnclosures() {
-//        monkeyCage.addAnimal(monkey);
-//        centralZoo.sellAnimal(monkey);
-//        assertEquals(10, centralZoo.getFunds(), 0.01);
-//        assertEquals(0, centralZoo.getNumberOfAnimals());
-//    }
+    @Test
+    public void zooCanSellAnimalWithoutTakingIntoAccountDifferentEnclosures() {
+        monkeyCage.addAnimal(monkey);
+
+        centralZoo.addEnclosure(monkeyCage);
+
+        assertEquals(10,centralZoo.getTotalAnimalCashValue() , 0.01);
+
+        centralZoo.sellAnimalTakingIntoAccountDifferentEnclosures(monkey);
+        assertEquals(10, centralZoo.getFunds(), 0.01);
+        assertEquals(0, centralZoo.getNumberOfAnimals());
+
+    }
+
+
 }
